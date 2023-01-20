@@ -16,6 +16,7 @@ package com.cocosw.bottomsheet;
  * limitations under the License.
  */
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -158,10 +159,12 @@ class ActionMenuItem implements MenuItem {
          return this;
      }
 
+     @SuppressLint("ResourceType")
      public MenuItem setIcon(int iconRes) {
          mIconResId = iconRes;
-         if (iconRes>0)
-         mIconDrawable = ContextCompat.getDrawable(mContext, iconRes);
+         if (iconRes > 0) {
+           mIconDrawable = ContextCompat.getDrawable(mContext, iconRes);
+         }
          return this;
      }
 
